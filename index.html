@@ -1,92 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Housing Catalog</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; padding: 20px; }
-    header { text-align: center; margin-bottom: 30px; }
-    header h1 { color: #2c3e50; }
-    .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .card img { width: 100%; height: 180px; object-fit: cover; display: block; background: #ddd; }
-    .card-body { padding: 15px; }
-    .card-body h2 { font-size: 1.1rem; margin-bottom: 5px; }
-    .location { color: #777; font-size: 0.9rem; margin-bottom: 8px; }
-    .price { font-weight: bold; color: #27ae60; margin-bottom: 8px; }
-    .details { font-size: 0.85rem; color: #555; }
-    .details span { margin-right: 12px; }
-    .badge { display: inline-block; background: #3498db; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-top: 8px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>travert.in | Compare &amp; Book Hotels in India</title>
+<meta name="description" content="Book domestic and international hotels online. Compare prices and book luxury stays across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Housing Catalog</h1>
-    <p>Browse available housing options</p>
-  </header>
-  <main class="catalog">
-    <div class="card">
-      <img src="https://via.placeholder.com/400x180?text=House+1" alt="House 1">
-      <div class="card-body">
-        <h2>Cozy Family Home</h2>
-        <p class="location">Austin, TX</p>
-        <p class="price">$425,000</p>
-        <p class="details"><span>3 Beds</span><span>2 Baths</span><span>1,600 sqft</span></p>
-        <span class="badge">House</span>
+<header class="top" id="top"></header>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold)">Responsible luxury · Best price promise</span>
+    <h1>Save up to 55% on your next hotel stay</h1>
+    <p>We compare hotel prices from over 100 sites, so you don't have to.</p>
+    <form class="search" id="search">
+      <label><span>Destination</span><input name="city" list="cities" placeholder="City, hotel or landmark" autocomplete="off"></label>
+      <label><span>Check-in</span><input type="date" name="cin"></label>
+      <label><span>Check-out</span><input type="date" name="cout"></label>
+      <label><span>Guests &amp; Rooms</span><select name="guests"><option value="1">1 Guest, 1 Room</option><option value="2" selected>2 Guests, 1 Room</option><option value="4">4 Guests, 2 Rooms</option></select></label>
+      <button class="btn" type="submit">Search</button>
+    </form>
+    <datalist id="cities"></datalist>
+    <div class="trust"><span><i>✦</i>Best Rates Guaranteed</span><span><i>✦</i>Free Cancellation</span><span><i>✦</i>Member Prices</span><span><i>✦</i>24×7 Support</span></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap" style="margin-top:-56px;position:relative">
+    <div class="compare">
+      <div><span class="eyebrow">How it works</span><h2>Instantly compare prices from 100s of sites</h2>
+        <p class="sub" style="margin-bottom:20px">See every deal for the same room side by side, then book at the lowest rate with no hidden charges.</p><a class="btn ghost" href="hotels.html">Find Deals</a></div>
+      <div class="rates">
+        <div class="rate"><span>Hotel site</span><span>₹ 6,170 <small>per night</small></span></div>
+        <div class="rate"><span>Travel agent</span><span>₹ 5,985 <small>per night</small></span></div>
+        <div class="rate best"><span>travert.in<em>25% lower than other sites</em></span><span>₹ 4,620 <small>per night</small></span></div>
       </div>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/400x180?text=Apartment+1" alt="Apartment 1">
-      <div class="card-body">
-        <h2>Modern Downtown Apartment</h2>
-        <p class="location">New York, NY</p>
-        <p class="price">$2,300/mo</p>
-        <p class="details"><span>2 Beds</span><span>1 Bath</span><span>900 sqft</span></p>
-        <span class="badge">Apartment</span>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/400x180?text=Condo+1" alt="Condo 1">
-      <div class="card-body">
-        <h2>Beachfront Condo</h2>
-        <p class="location">Miami, FL</p>
-        <p class="price">$650,000</p>
-        <p class="details"><span>2 Beds</span><span>2 Baths</span><span>1,200 sqft</span></p>
-        <span class="badge">Condo</span>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/400x180?text=Studio+1" alt="Studio 1">
-      <div class="card-body">
-        <h2>Compact Studio</h2>
-        <p class="location">San Francisco, CA</p>
-        <p class="price">$1,800/mo</p>
-        <p class="details"><span>Studio</span><span>1 Bath</span><span>450 sqft</span></p>
-        <span class="badge">Studio</span>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/400x180?text=Villa+1" alt="Villa 1">
-      <div class="card-body">
-        <h2>Luxury Villa</h2>
-        <p class="location">Los Angeles, CA</p>
-        <p class="price">$1,200,000</p>
-        <p class="details"><span>5 Beds</span><span>4 Baths</span><span>3,500 sqft</span></p>
-        <span class="badge">Villa</span>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/400x180?text=Townhouse+1" alt="Townhouse 1">
-      <div class="card-body">
-        <h2>Suburban Townhouse</h2>
-        <p class="location">Chicago, IL</p>
-        <p class="price">$310,000</p>
-        <p class="details"><span>3 Beds</span><span>2.5 Baths</span><span>1,750 sqft</span></p>
-        <span class="badge">Townhouse</span>
-      </div>
-    </div>
-  </main>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Alluring locations</span><h2>Discover the best time to book your next stay</h2>
+    <p class="sub">Prices are based on the average price range per night.</p>
+    <div class="tabs" id="home-tabs"></div><div class="grid" id="home-dest"></div>
+  </div>
+</section>
+
+<section style="background:var(--sand)">
+  <div class="wrap">
+    <span class="eyebrow">Handpicked for you</span><h2>Popular Hotels This Season</h2>
+    <p class="sub">Book Domestic and International Hotels Online with free cancellation on select stays.</p>
+    <div id="featured"></div><a class="btn" href="hotels.html">View All Hotels</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="member"><div><h3>Want access to member prices and perks?</h3><p>Enjoy up to 15% member savings and exclusive privileges on every direct booking.</p></div><a class="btn" href="contact.html">Join Now</a></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><span class="eyebrow">Popular searches</span><h2 style="margin-bottom:20px">Hotels in Popular Destinations</h2><ul class="quick" id="quick"></ul></div>
+</section>
+<footer class="foot" id="foot"></footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

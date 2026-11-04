@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotels | travert.in</title>
+<meta name="description" content="Browse and filter hotels, resorts and heritage stays across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="top" id="top"></header>
+<div class="page-h"><div class="wrap"><span class="eyebrow" style="color:var(--gold)">Our Hotels</span><h1 id="h-title">Hotels in India</h1><p>Best price guaranteed · Free cancellation on select stays</p></div></div>
+<div class="wrap layout">
+  <aside class="filters">
+    <h4>Destination</h4><select id="f-city" data-f="city"></select>
+    <h4>Price per night</h4><input type="range" min="3000" max="20000" step="500" value="20000" data-f="price"><div>Up to <b id="max-v"></b></div>
+    <h4>Star Category</h4>
+    <label><input type="checkbox" data-f="star" value="5"> 5 Star</label><label><input type="checkbox" data-f="star" value="4"> 4 Star</label><label><input type="checkbox" data-f="star" value="3"> 3 Star</label>
+    <h4>Property Type</h4>
+    <label><input type="checkbox" data-f="type" value="Hotel"> Hotel</label><label><input type="checkbox" data-f="type" value="Resort"> Resort</label><label><input type="checkbox" data-f="type" value="Heritage"> Heritage</label>
+  </aside>
+  <main>
+    <div class="bar"><b id="count"></b><label>Sort by&nbsp;<select data-f="sort"><option value="pop">Popularity</option><option value="lo">Price: Low to High</option><option value="hi">Price: High to Low</option></select></label></div>
+    <div id="list"></div>
+  </main>
+</div>
+<footer class="foot" id="foot"></footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
